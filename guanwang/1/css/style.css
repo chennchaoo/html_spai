@@ -1,0 +1,36 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+dl,dt,dd,ul,li{margin: 0px; padding: 0px;}
+ul{list-style: none;}
+.hide{display: none;}
+.clear{ clear: both}
+/*大的背景图*/
+.bg_index{width:1280px;height:4047px; background:url(../img/bg_index.jpg) no-repeat; margin:0 auto;}
+/*介绍*/
+/*.bg img{
+	width:218px;height:259px; margin-left:400px;margin-top:700px;	
+}*/
+
+/*弹出层*/
+.bg_kong{ width:10px;height:322px;}
+.xiazai{ width:191px ; height:64px ; margin-left:540px;}
+.xiazai a{ width:191px ; height:64px ; display:block;}
+
+.tan{
+	width:568px; height:335px; background:url(../img/tan.png) no-repeat;
+	position: absolute;
+    left:auto;
+    top:200px;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    margin-left:355px;; 
+    z-index: 5000;
+
+
+}
+.close_tan{ width:40px; height:40px; margin-left:495px; margin-top:20px;}
+.close_tan a{ width:40px; height:40px; display:block}
+.xiazai_iphone{ width:265px ; height:71px;  margin-top:35px; margin-left:255px;}
+.xiazai_iphone a{ width:265px ; height:71px; display:block}
+.xiazai_android{ width:265px ; height:71px;  margin-top:30px; margin-left:255px;}
+.xiazai_android a{ width:265px ; height:71px; display:block;}

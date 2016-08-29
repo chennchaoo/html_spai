@@ -1,0 +1,213 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+dl,dt,dd,ul,li{margin: 0px; padding: 0px;}
+ul{list-style: none;}
+.hide{display: none;}
+.clear{ clear: both}
+/*@font-face
+{
+font-family: huaweikaiti;
+src: url(../font/huawenxingkai.ttf);
+}*/
+/*大的背景图*/
+.bg_1{width:640px; height:1027px; background:url(../img/bg_1.png) bottom no-repeat; margin:0 auto; padding:0;}
+.bg_2{width:640px; height:1027px; background:url(../img/bg_2.png) bottom no-repeat; margin:0 auto;padding:0; margin-top:-1px;}
+
+/*musicList*/
+.bg_1_kong{ width:10px; height:411px;}
+.musicList{
+	width:418px; height:310px;  margin:0 auto;
+}
+.music_div{ width:130px; height:130px;float:left;margin-left:8px; margin-top:8px;}
+
+#music_div_2{ width:136px;margin-left:60px; }
+#music_div_h_2{width:136px;margin-left:60px;background:url(../img/music_2_d.png) no-repeat;}
+#music_div_h_2 img{margin-top:15px; width:27px;}
+#qinjian1{ margin-left:37px;}
+#qinjian2{margin-left:10px;}
+
+#music_div_3,#music_div_h_3 { height:50px; margin-top:20px; margin-left:10px; text-align:center;}
+#music_div_h_5{ background:url(../img/music_5.png)  no-repeat; }
+
+#music_div_6,#music_div_h_6{ margin-top:-20px; text-align:center;}
+
+.xiangqing{ width:335px; height:73px; margin-left:150px; text-align: center;margin-top:20px;}
+.xiangqing img{width:335px;}
+
+.prize{ width:523px; height:120px; margin:0 auto; margin-top:75px;text-align: center;}
+
+.bg_2_kong{ width:10px; height:820px;}
+.spai_url{ width:500px; height:200px; margin:0 auto; }
+.spai_url a{width:500px; height:200px; display:block; }
+
+/*动画*/
+#music_div_h_1 img{
+    -webkit-animation: zhuan_1 3s linear 0s infinite ;
+    animation: zhuan_1 3s linear 0s infinite ;
+}
+@-webkit-keyframes zhuan_1 {
+   from{-webkit-transform: rotate(0deg);}
+	to{-webkit-transform: rotate(360deg);}
+}
+@keyframes zhuan_1 {
+   from{transform: rotate(0deg);}
+	to{transform: rotate(360deg);}
+}
+
+#music_div_h_2 img{
+	 -webkit-animation: dong_2 0.5s linear 0s infinite ;
+    animation: dong_2s 0.5 linear 0s infinite ;
+}
+@-webkit-keyframes dong_2 {
+   from{-webkit-transform: scaleX(1);}
+	to{-webkit-transform: scaleX(0.9);}
+}
+@keyframes dong_2 {
+   from{transform: scaleX(1);}
+	to{transform: scaleX(0.9);}
+}
+
+#music_div_h_3 img{
+	 -webkit-animation: dong_2 0.5s linear 0s infinite ;
+    animation: dong_2 0.5s linear 0s infinite ;
+}
+@-webkit-keyframes dong_2 {
+   from{-webkit-transform: scaleX(1);}
+	to{-webkit-transform: scaleX(0.9);}
+}
+@keyframes dong_2 {
+   from{transform: scaleX(1);}
+	to{transform: scaleX(0.9);}
+}
+
+#music_div_h_4 img{
+    -webkit-animation: dong_4 1s linear  infinite alternate;
+    animation: dong_4 1s linear  infinite alternate;
+}
+@-webkit-keyframes dong_4 {
+   from{-webkit-transform: rotate(0deg);}
+	to{-webkit-transform: rotate(40deg);}
+}
+@keyframes dong_4 {
+   from{transform: rotate(0deg);}
+	to{transform: rotate(40deg);}
+}
+#chui_1{
+    -webkit-animation: dong_5 0.4s ease-out  infinite alternate;
+    animation: dong_5 0.4s ease-out  infinite alternate;
+    -webkit-transform-origin: 20px 0px;
+}
+@-webkit-keyframes dong_5 {
+    from{-webkit-transform: rotate(0deg);}
+    to{-webkit-transform: rotate(-30deg);}
+}
+@keyframes dong_5 {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(-30deg);}
+}
+#chui_2{
+    margin-left:5px;
+    -webkit-animation: dong_5_2 0.4s ease-out 0.4s infinite alternate;
+    animation: dong_5_2 0.4s ease-out 0.4s infinite alternate;
+    -webkit-transform-origin: 48px 0px;
+    /*transform-origin: 100px 0px;*/
+}
+@-webkit-keyframes dong_5_2 {
+    from{-webkit-transform: rotate(0deg);}
+    to{-webkit-transform: rotate(30deg);}
+}
+@keyframes dong_5_2 {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(30deg);}
+}
+
+#music_div_h_6 img{
+    -webkit-animation: dong_6 1s linear  infinite alternate;
+    animation: dong_6 1s linear  infinite alternate;
+}
+@-webkit-keyframes dong_6 {
+    from{-webkit-transform: rotate(0deg);}
+    to{-webkit-transform: rotate(30deg);}
+}
+@keyframes dong_6 {
+    from{transform: rotate(0deg);}
+    to{transform: rotate(30deg);}
+}
+
+#music_div_h_7 img{
+    -webkit-animation: dong_7 0.5s linear 0s infinite ;
+    animation: dong_7 0.5s linear 0s infinite ;
+}
+@-webkit-keyframes dong_7 {
+    from{-webkit-transform: scale(1);}
+    to{-webkit-transform: scale(0.9);}
+}
+@keyframes dong_7 {
+    from{transform: scale(1);}
+    to{transform: scale(0.9);}
+}
+#music_div_h_8 img{
+    -webkit-animation: dong_8 0.5s linear 0s infinite ;
+    animation: dong_8 0.5s linear 0s infinite ;
+}
+@-webkit-keyframes dong_8 {
+    from{-webkit-transform: scale(1);}
+    to{-webkit-transform: scale(0.9);}
+}
+@keyframes dong_8 {
+    from{transform: scale(1);}
+    to{transform: scale(0.9);}
+}
+
+/* dropload */
+.dropload-up,.dropload-down{
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    -webkit-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+}
+.dropload-refresh,.dropload-update,.dropload-load{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    -webkit-transform:translate(-50%,0);
+    transform:translate(-50%,0);
+}
+.dropload-load .loading{
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    margin: 6px;
+    border: 2px solid #666;
+    border-bottom-color: transparent;
+    vertical-align: middle;
+    -webkit-animation: rotate 0.75s 0 linear infinite;
+    animation: rotate 0.75s 0 linear infinite;
+}
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

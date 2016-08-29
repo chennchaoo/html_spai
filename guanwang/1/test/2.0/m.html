@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<title>堂口</title>
+<meta charset="utf-8">
+<meta content="" name="description">
+<meta content="" name="keywords">
+<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+<meta content="telephone=no, address=no" name="format-detection">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<link href="css/style_m.css?t=7" type="text/css" rel="stylesheet" media="all" />
+<script  src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script>
+
+(function(){
+			var phoneWidth = parseInt(window.screen.width),
+				phoneScale = phoneWidth/640,
+				ua = navigator.userAgent;
+			if (/Android (\d+\.\d+)/.test(ua)){
+				var version = parseFloat(RegExp.$1);
+				// andriod 2.3
+				if(version > 2.3){
+					document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+				// andriod 2.3以上
+				}else{
+					document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+				}
+				// 其他系统
+			} else {
+				document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+			}
+		})();
+//弹出层
+function ShowDiv(bg_div,show_div){	
+	if(bg_div!='')
+	{
+		$("#"+bg_div).show();
+		var bgdiv = document.getElementById(bg_div);
+		bgdiv.style.width = document.body.scrollWidth;
+		$("#"+bg_div).height($(document).height());
+	}
+	$("#"+show_div).show();
+	
+	
+	
+};
+//关闭弹出层
+function CloseDiv(bg_div,show_div)
+{
+	if(bg_div != ''){
+		$("#"+bg_div).hide();
+	}
+	$("#"+show_div).hide();
+};
+var browser={
+	versions:function(){
+			var u = navigator.userAgent, app = navigator.appVersion;
+			return {         //移动终端浏览器版本信息
+				 trident: u.indexOf('Trident') > -1, //IE内核
+				presto: u.indexOf('Presto') > -1, //opera内核
+				webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+				gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+				mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+				ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+				android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+				iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+				iPad: u.indexOf('iPad') > -1, //是否iPad
+				webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+			};
+		 }(),
+		 language:(navigator.browserLanguage || navigator.language).toLowerCase()
+}
+function friend(){
+	if(browser.versions.mobile==true){
+			if(browser.versions.ios==true){
+				//alert('即将上线，敬请期待！');
+				//window.location.href="m.html";
+				//window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.app.tangkou&g_f=991653";
+			}else if(browser.versions.android==true){
+				//window.location.href="m.html";
+									  
+			}
+		}	
+		else{
+			window.location.href="pc.html";
+		}	
+}
+
+friend();
+</script>
+
+</head>
+<body>
+<div class="bg_m">
+	<div class="bg_1" onClick="xiazai()"></div>
+    <div class="bg_2"><img src="img/bg_2.jpg"></div>
+    <div class="bg_3"><img src="img/bg_3.jpg"></div>
+    <div class="bg_4"><img src="img/bg_4.jpg"></div>
+    <div class="bg_5"><img src="img/bg_5.jpg"></div>
+    <div class="bg_6"><img src="img/bg_6.jpg"></div>
+    <div class="bg_7"><img src="img/bg_7.jpg"></div>
+</div>
+</body>
+</html>

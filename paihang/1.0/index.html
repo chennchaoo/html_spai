@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+    <title>s派</title>
+    
+    <link href="css/style_h.css?t=8" type="text/css" rel="stylesheet" media="all" />
+    <link rel="stylesheet" href="css/mui.min.css?t=2">
+	<script src="js/public.js"></script>
+<script>
+        	(function(){
+			var phoneWidth = parseInt(window.screen.width),
+				phoneScale = phoneWidth/640,
+				ua = navigator.userAgent;
+			if (/Android (\d+\.\d+)/.test(ua)){
+				var version = parseFloat(RegExp.$1);
+				// andriod 2.3
+				if(version > 2.3){
+					document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+				// andriod 2.3以上
+				}else{
+					document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+				}
+				// 其他系统
+			} else {
+				/*document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');*/
+				document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+			}
+		})();
+		
+		 /*$.ajax({
+			type : "GET",
+			//async : false,
+			dataType : "json",
+			url : publicUrl+'m/index.php?',
+			success : function(d){
+				
+			}
+		 })*/
+		 
+        </script>
+    <link rel="stylesheet" href="css/style_h.css">
+</head>
+<body>
+<div class="outer">
+    
+    <div class="inner">
+        <div class="lists">
+            <div class="bg_kong"></div>
+            <div class="moon">
+                <a href="./moon.html" class="more" id="moonHtml">更多></a>
+            </div>
+            <div class="voteList">
+            	<div class="voteList_da">
+                	<div class="voteList_kuang">
+                    	<div class="voteList_photo">
+                            <img src="img/photo.png">
+                        </div>
+                        <div class="truename">李曼洁</div>
+                        <div class="school">李曼洁李曼洁李曼洁李曼洁</div>
+                    </div>
+                    <div class="dianzan">
+                        <div class="zanshu" onclick="dianzan()">1190</div>
+                    </div>
+                    <div class="ranking">99</div>
+                </div>
+
+            </div>
+            <div class="total">
+                <a href="total.html" class="more" id="totalHtml">更多></a>
+            </div>
+            <div class="voteList" id="totalList">
+                
+            </div>
+            <div class="xstd">向上拖动加载更多</div>
+  </div>
+    
+</div>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/dropload.min.js"></script>
+
+<script src="js/mui.min.js"></script>
+	<script src="js/mui.zoom.js"></script>
+	<script src="js/mui.previewimage.js"></script>
+<script>
+
+// dropload
+var dropload = $('.inner').dropload({
+    domUp : {
+        domClass   : 'dropload-up',
+        domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
+        domUpdate  : '<div class="dropload-update">↑释放更新</div>',
+        domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+    },
+    domDown : {
+        domClass   : 'dropload-down',
+        domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+        domUpdate  : '<div class="dropload-update">↓释放加载</div>',
+        domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+    },
+    loadDownFn : function(me){
+		/*var result = '';
+		for(var i = 0; i < 3; i++){
+			
+			result +=	'<div class="voteList">'
+						;
+		}*/
+		setTimeout(function(){
+			/*$('.lists').append(result);*/
+			/*$('.xstd').before(result);*/
+            votelistTotal();
+			me.resetload();
+		},1000);
+    }
+});
+//datas();
+function datas(){
+
+		setTimeout(function(){
+			/*$('.lists').append(result);*/
+			/*$('.list_da').append(result);*/
+            votelistTotal();
+			me.resetload();
+		},1000);
+}
+
+</script>
+<script>
+mui.previewImage();
+$("#moonHtml").click(function(){
+    location.href='moon.html';
+})
+$("#totalHtml").click(function(){
+    location.href='total.html';
+})
+	function dianzan(){
+		alert('点赞成功');	
+	}
+    	/*$(document).ready(function() {
+			
+            $(".list_img").click(function(){
+				alert('123');	
+			})
+        });*/
+		/*alert($(".imgs_works_1 img").width());*/
+    function votelistFor(){
+        var result='';
+        result+='<div class="voteList_da">'
+                +'<div class="voteList_kuang">'
+                +'<div class="voteList_photo">'
+                +'<img src="img/photo.png">'
+                +'</div>'
+                +'<div class="truename">李曼洁</div>'
+                +'<div class="school">李曼洁李曼洁李曼洁李曼洁</div>'
+                +'</div>'
+                +'<div class="dianzan">'
+                +'<div class="zanshu" onclick="dianzan()">1190</div>'
+                +'</div>'
+                +'<div class="ranking">99</div>'
+                +'</div>';
+        for(var i=0;i<7;i++){
+            $('.voteList').append(result);
+        }
+
+    }
+function votelistTotal(){
+    var result='';
+    result+='<div class="voteList_da">'
+            +'<div class="voteList_kuang">'
+            +'<div class="voteList_photo">'
+            +'<img src="img/photo.png">'
+            +'</div>'
+            +'<div class="truename">李曼洁</div>'
+            +'<div class="school">李曼洁李曼洁李曼洁李曼洁</div>'
+            +'</div>'
+            +'<div class="dianzan">'
+            +'<div class="zanshu" onclick="dianzan()">1190</div>'
+            +'</div>'
+            +'<div class="ranking">99</div>'
+            +'</div>';
+    for(var i=0;i<7;i++){
+        $('#totalList').append(result);
+    }
+
+}
+votelistFor();
+</script>
+</body>
+</html>

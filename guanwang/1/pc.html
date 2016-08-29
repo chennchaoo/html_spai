@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- saved from url=(0020)http://ie.sogou.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>堂口</title>
+  <link rel="stylesheet" href="css/all.build.css?t=2">
+  <script type="text/javascript" src="js/public.js"></script>
+  <script>var t1 = new Date().getTime();</script>
+  <script>
+  	//弹出层
+function ShowDiv(bg_div,show_div){	
+	if(bg_div!='')
+	{
+		$("#"+bg_div).show();
+		var bgdiv = document.getElementById(bg_div);
+		bgdiv.style.width = document.body.scrollWidth;
+		$("#"+bg_div).height($(document).height());
+	}
+	$("#"+show_div).show();
+};
+//关闭弹出层
+function CloseDiv(bg_div,show_div)
+{
+	if(bg_div != ''){
+		$("#"+bg_div).hide();
+	}
+	$("#"+show_div).hide();
+};
+var browser={
+	versions:function(){
+			var u = navigator.userAgent, app = navigator.appVersion;
+			return {         //移动终端浏览器版本信息
+				 trident: u.indexOf('Trident') > -1, //IE内核
+				presto: u.indexOf('Presto') > -1, //opera内核
+				webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+				gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+				mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+				ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+				android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+				iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+				iPad: u.indexOf('iPad') > -1, //是否iPad
+				webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
+			};
+		 }(),
+		 language:(navigator.browserLanguage || navigator.language).toLowerCase()
+}
+function friend(){
+	if(browser.versions.mobile==true){
+			if(browser.versions.ios==true){
+				//alert('即将上线，敬请期待！');
+				window.location.href="m.html";
+				//window.location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.app.tangkou&g_f=991653";
+			}else if(browser.versions.android==true){
+				window.location.href="m.html";
+									  
+			}
+		}	
+		else{
+			//window.location.href="pc.html";
+		}	
+}
+
+friend();
+  </script>
+</head>
+<body onLoad="pingApp.getPv();">
+<div class="tan" style="display:none" id="tan"> 
+    <div class="close_tan" onClick="CloseDiv('','tan')"><a href="javascript:void(0)"></a></div>
+    <div class="xiazai_iphone"><a href="https://itunes.apple.com/cn/app/id1035157837"></a></div>
+    <div class="xiazai_android"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.app.tangkou&g_f=991653"></a></div>
+</div>
+  <div class="body" style="height: 822px;">
+    <div class="inner" style="height: 3288px; margin-top: -1644px;">
+      <div class="slide" id="prefetch" style="height: 822px;">
+      	<div class="caidan" >
+        	<div class="caidan_1"  onClick="ShowDiv('','tan')"><a href="javascript:void(0)"></a></div>
+            <div class="caidan_2"><a href="http://c.taskou.com/admin"></a></div>
+        </div>
+        <div class="top_caidan"><img src="image/1.jpg"></div>
+      </div>
+      <div class="slide" id="simple" style="height: 822px;">
+        <div class="secitonbottombg" id="secitonbottombg2"><img src="image/2.jpg"  width="1128"/></div>
+      </div>
+      <div class="slide" id="speed" style="height: 822px;">
+        <div class="secitonbottombg" id="secitonbottombg2"><img src="image/3.jpg"  width="1128" /></div>
+      </div>
+      <div class="slide" id="update" style="height: 822px;">
+        <div class="secitonbottombg" id="secitonbottombg2"><img src="image/4.jpg"  width="1128" /></div>
+      </div>
+      <div class="slide" id="update2" style="height: 822px;">
+        <div class="secitonbottombg" id="secitonbottombg2"><img src="image/5.jpg"  width="1128" /></div>
+      </div>
+      <div class="slide" id="update3" style="height: 822px;">
+        <div class="top_caidan2"><img src="image/6.jpg"></div>
+      </div>
+    </div>
+    
+    
+  </div>
+  
+  <script src="js/jquery_1.7.2.js"></script>
+  
+  <script src="js/ie.build.js"></script>
+  
+  
+
+
+</body></html>

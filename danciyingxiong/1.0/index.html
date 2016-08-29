@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+    <title>s派-单词英雄</title>
+    <link href="css/style_h.css?t=1" type="text/css" rel="stylesheet" media="all" />
+	<script src="js/public.js"></script>
+    <script src="js/jquery.min.js"></script>
+<script>
+        	(function(){
+			var phoneWidth = parseInt(window.screen.width),
+				phoneScale = phoneWidth/640,
+				ua = navigator.userAgent;
+			if (/Android (\d+\.\d+)/.test(ua)){
+				var version = parseFloat(RegExp.$1);
+				// andriod 2.3
+				if(version > 2.3){
+					document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+				// andriod 2.3以上
+				}else{
+					document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+				}
+				// 其他系统
+			} else {
+				/*document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');*/
+				document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+			}
+		})();
+		
+		 /*$.ajax({
+			type : "GET",
+			//async : false,
+			dataType : "json",
+			url : publicUrl+'m/index.php?',
+			success : function(d){
+				
+			}
+		 })*/
+		 
+        </script>
+</head>
+<body>
+	<div class="bg_1">
+    	<div class="bg_1_kong"></div>
+    	<div class="musicList">
+        	<div class="music_div" id="music_div_1" onClick="music_div(1)"style="display:none"><img src="img/music_1.png"></div>
+            <div class="music_div" id="music_div_h_1" onClick="music_div(1)" ><img src="img/music_1.png"></div>
+            
+            <div class="music_div" id="music_div_2" onClick="music_div(2)"><img src="img/music_2.png"></div>
+            <div class="music_div" id="music_div_h_2" onClick="music_div(2)" style="display:none"><img src="img/qinjian.png" id="qinjian1"><img src="img/qinjian.png" id="qinjian2"></div>
+            
+            <div class="music_div" id="music_div_3" onClick="music_div(3)"><img src="img/music_3.png"></div>
+            <div class="music_div" id="music_div_h_3" onClick="music_div(3)" style="display:none"><img src="img/music_3.png"></div>
+            
+            <div class="music_div" id="music_div_4" onClick="music_div(4)"><img src="img/music_4.png"></div>
+            <div class="music_div" id="music_div_h_4" onClick="music_div(4)" style="display:none"><img src="img/music_4.png"></div>
+            
+                <div class="music_div" id="music_div_5" onClick="music_div(5)"><img src="img/music_5b.png"></div>
+            <div class="music_div" id="music_div_h_5" onClick="music_div(5)" style="display:none"><img src="img/chui_1.png" id="chui_1"><img src="img/chui_2.png" id="chui_2"></div>
+
+            <!--<div class="music_div" id="music_div_6" onClick="music_div(6)"><img src="img/music_6.png"></div>
+            <div class="music_div" id="music_div_h_6" onClick="music_div(6)"style="display:none"><img src="img/music_6.png"></div>
+
+            <div class="music_div" id="music_div_7" onClick="music_div(7)"><img src="img/music_7.png"></div>
+            <div class="music_div" id="music_div_h_7" onClick="music_div(7)" style="display:none"><img src="img/music_7.png"></div>
+
+            <div class="music_div" id="music_div_8" onClick="music_div(8)"><img src="img/music_8.png"></div>
+            <div class="music_div" id="music_div_h_8" onClick="music_div(8)"style="display:none"><img src="img/music_8.png"></div>-->
+        </div>
+        <div class="xiangqing">
+            <img src="img/xiangqing.png">
+        </div>
+        <div class="prize">
+        	<img src="img/prize.png">
+        </div>
+        <!--<audio id="music_1" src="mp3/3.mp3" autoplay="autoplay" loop="loop">你的浏览器不支持audio标签。</audio>-->
+        <audio id="music_1" src="mp3/1.mp3" autoplay="autoplay" loop="loop">你的浏览器不支持audio标签。</audio>
+        <audio id="music_2" src="mp3/2.mp3"  loop="loop">你的浏览器不支持audio标签。</audio> 
+        <audio id="music_3" src="mp3/3.mp3"  loop="loop">你的浏览器不支持audio标签。</audio>
+        <audio id="music_4" src="mp3/4.mp3"  loop="loop">你的浏览器不支持audio标签。</audio>
+        <audio id="music_5" src="mp3/5.mp3"  loop="loop">你的浏览器不支持audio标签。</audio>
+        <audio id="music_6" src="mp3/6.mp3"  loop="loop">你的浏览器不支持audio标签。</audio>
+        <audio id="music_7" src="mp3/7.mp3"  loop="loop">你的浏览器不支持audio标签。</audio>
+        <audio id="music_8" src="mp3/8.mp3"  loop="loop">你的浏览器不支持audio标签。</audio>
+    </div>
+    <div class="bg_2">
+    	<div class="bg_2_kong"></div>
+    	<div class="spai_url"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.app.spire" ></a></div>
+    </div>
+</body>
+</html>

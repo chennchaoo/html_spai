@@ -1,0 +1,17 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+dl,dt,dd,ul,li{margin: 0px; padding: 0px;}
+ul{list-style: none;}
+.hide{display: none;}
+.clear{ clear: both}
+
+
+
+/*已完成的任务*/
+.bg_m{ width:640px;  margin:0 auto; overflow:hidden;}
+.bg_m div{ margin:0 auto; text-align:center;}
+.bg_1{ width:640px;height:88px; background:url(../img/bg_1.jpg) no-repeat;}
+.bg_2{ background:#212322;}
+.bg_7{ background:#333333;}
+.bg_kong{ width:100px;height:150px;}
+
+
