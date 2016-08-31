@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+    <title>S派</title>
+    <link href="css/style_m.css?t=1" type="text/css" rel="stylesheet" media="all" />
+
+	<script src="js/public.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script>
+        (function(){
+			var phoneWidth = parseInt(window.screen.width),
+				phoneScale = phoneWidth/640,
+				ua = navigator.userAgent;
+			if (/Android (\d+\.\d+)/.test(ua)){
+				var version = parseFloat(RegExp.$1);
+				// andriod 2.3
+				if(version > 2.3){
+					document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+				// andriod 2.3以上
+				}else{
+					document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+				}
+				// 其他系统
+			} else {
+				/*document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');*/
+				document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+			}
+		})();
+        $(document).ready(function(){
+            $(".shetuan_list_1").click(function(){
+                $(".xiangqing").hide();
+                $(this).children('.xiangqing').toggle();
+            })
+        })
+        $.ajax({
+            type : "GET",
+            dataType : "json",
+            url : publicUrl+'a/?m=share&a=collegeLists',
+            success : function(data){
+                if(data.code==1){
+                    alert(data.data.lists.length);
+                    if(data.data.lists.length>0){
+                        var resultSchool='';
+                        for(var i=0; i<data.data.lists.length;i++){
+                            resultSchool+='<option value="'+data.data.lists[i].coid+'">'+data.data.lists[i].name+'</option>';
+                        }
+                        $(".select_school").append(resultSchool);
+                    }
+                }else{
+                    alert(data.msg);
+                }
+            }
+        })
+    </script>
+</head>
+<body>
+    <div class="bg_1" style="display: block;">
+        <div class="bg_1_kong"></div>
+        <div class="first_word">
+            挨过了斯巴达式教育、
+            熬过了高考，终于来到了
+            传说中可以释放天性，
+            自由翱翔的大学。
+        </div>
+        <div class="select_school_div" onchange="collegeLists()">
+            <select class="select_school" >
+                <option value="0">探索你的大学</option>
+                <option value="1">校园一</option>
+                <option value="2">校园二</option>
+                <option value="3">校园三</option>
+            </select>
+        </div>
+        <div class="word_2">
+            可是心中为什么会有点不舍呢，
+            或许是因为再也没有一群一起
+            为了同一个目标熬夜奋战的小伙伴了，
+            或许自己这辈子再也不会为了一件事
+            那么认真了吧。嗯？社团？
+
+        </div>
+        <div class="shetuan">
+            <div class="shetuan_left">
+                XX大学社团清单
+            </div>
+            <div class="shetuan_right">
+                <select class="shetuan_type">
+                    <option>类型选择</option>
+                    <option>类型第一</option>
+                    <option>类型第二</option>
+                    <option>类型第三</option>
+                </select>
+            </div>
+        </div>
+        <div class="shetuan_list">
+            <div class="shetuan_list_1">
+                <div class="shetuan_name">
+                    社团名称1
+                </div>
+                <div class="xiangqing" style="display: none">
+                    <div class="xiangqing_left">
+                        <div class="xiangqing_avatar"><img src=""></div>
+                        <div class="shezhang_name">社长:社长名</div>
+                    </div>
+                    <div class="xiangqing_word">
+                            详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情
+
+                    </div>
+                    <div class="xiangqing_check">
+                        报名<input type="checkbox" name="choiceThis">
+                    </div>
+                </div>
+            </div>
+            <div class="shetuan_list_1">
+                <div class="shetuan_name">
+                    社团名称2
+                </div>
+                <div class="xiangqing" style="display: none">
+                    <div class="xiangqing_left">
+                        <div class="xiangqing_avatar"><img src=""></div>
+                        <div class="shezhang_name">社长:社长名</div>
+                    </div>
+                    <div class="xiangqing_word">
+                        详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情
+                    </div>
+                    <div class="xiangqing_check">
+                        报名<input type="checkbox" name="choiceThis">
+                    </div>
+                </div>
+            </div>
+            <div class="shetuan_list_1">
+                <div class="shetuan_name">
+                    社团名称3
+                </div>
+                <div class="xiangqing" style="display: none">
+                    <div class="xiangqing_left">
+                        <div class="xiangqing_avatar"><img src=""></div>
+                        <div class="shezhang_name">社长:社长名</div>
+                    </div>
+                    <div class="xiangqing_word">
+                        详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情
+                    </div>
+                    <div class="xiangqing_check">
+                        报名<input type="checkbox" name="choiceThis">
+                    </div>
+                </div>
+            </div>
+            <div class="shetuan_list_1">
+                <div class="shetuan_name">
+                    社团名称4
+                </div>
+                <div class="xiangqing" style="display: none">
+                    <div class="xiangqing_left">
+                        <div class="xiangqing_avatar"><img src=""></div>
+                        <div class="shezhang_name">社长:社长名</div>
+                    </div>
+                    <div class="xiangqing_word">
+                        详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情详情详情
+                        详情详情详情详情详情详情详情详情详情详情详情详情
+                    </div>
+                    <div class="xiangqing_check">
+                        报名<input type="checkbox" name="choiceThis">
+                    </div>
+                </div>
+            </div>
+            <!--详情列表 stop-->
+        </div>
+        <!-- 列表stop-->
+        <div class="shetuan_checked">
+            <div class="shetuan_checked_left">
+                <div class="shetuan_checked_left_1">1) 你所报名的社团</div>
+                <div class="shetuan_checked_left_1">2) 你所报名的社团</div>
+                <div class="shetuan_checked_left_1">3) 你所报名的社团</div>
+            </div>
+            <div class="button_baoming"><a href="javascript:void(0)">报名</a></div>
+        </div>
+    </div>
+    <!-- pageOne stop-->
+    <!-- pageTwo start-->
+    <div class="bg_2" style="display: none">
+        <div class="bg_2_kong"></div>
+        <div class="bg_2_first_word">
+            这好像和高中那会儿简单
+            的兴趣爱好式的不一样诶，
+            或许在这里我能为自己
+            真正喜欢的东西奋斗！
+
+        </div>
+        <div class="shetuan_qingdan_word">
+            某某大学社团清单
+        </div>
+        <div class="shetuan_qingdan_list">
+            <div class="shetuan_qingdan_1">1) 你所报名的社团# <span></span></div>
+            <div class="shetuan_qingdan_1">2) 你所报名的社团</div>
+            <div class="shetuan_qingdan_1">3) 你所报名的社团</div>
+        </div>
+        <div class="form_user">
+            <div class="form_input"><label>名称：</label><input type="text" placeholder="请填写姓名"></div>
+            <div class="form_input"><label>专业：</label><input type="text" placeholder="请填写姓名"></div>
+            <div class="form_input"><label>联系电话：</label><input type="text" placeholder="请填写姓名"></div>
+            <div class="form_input"><label>微信：</label><input type="text" placeholder="请填写姓名"></div>
+            <div class="form_input"><label>QQ：</label><input type="text" placeholder="请填写姓名"></div>
+            <div class="form_input" id="form_input">
+                <label>自我介绍与特长（选填）</label></br>
+                <textarea>
+
+                </textarea>
+            </div>
+        </div>
+        <div class="button_tijiao"><a href="javascript:void(0)">提交</a></div>
+    </div>
+    <!-- pageTwo stop-->
+    <!-- pageThree start-->
+    <div class="bg_3" style="display: none;">
+        <div class="bg_3_kong"></div>
+        <div class="bg_logo"></div>
+        <div class="bg_3_word">
+            <div class="bg_word_1">
+                <p>开启不一样的大学生活</p>
+                <p>专属钥匙已用短信发给你了</p>
+                <p>无需注册</p>
+                <p>下载S派直接登录即可</p>
+            </div>
+            <div class="shareToFriend">
+                <p>分享至朋友圈</p>
+                <p>可获得幸运免费手机流量</p>
+            </div>
+            <div class="prize_liuliang">
+                <p>1G手机流量999人</p>
+                <p>500M手机流量1999人</p>
+                <p>100M手机流量2999人</p>
+                <p>以上手机流量覆盖移动、联通、铁通运营商</p>
+            </div>
+        </div>
+        <div class="buttons">
+            <div class="bg_3_button_1"><a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.app.spire">下载S派</a></div>
+            <div class="bg_3_button_2"><a href="javascript:void(0)">分享</a></div>
+        </div>
+    </div>
+    <div class="share" style="display: none" onclick="shareHidden()">
+        <div class="share_word">怎么分享给朋友？你猜☞</div>
+    </div>
+    <!-- pageThree stop-->
+<script>
+    $(".button_baoming").click(function(){
+        $(".bg_1").hide();
+        $(".bg_3").hide();
+        $(".bg_2").show();
+    })
+    $(".button_tijiao").click(function(){
+        $(".bg_2").hide();
+        $(".bg_1").hide();
+        $(".bg_3").show();
+    })
+    $(".bg_2").hide();
+    $(".bg_1").show();
+    $(".bg_3").hide();
+    function shareHidden(){
+        $(".share").hide();
+    }
+    $(".bg_3_button_2").click(function(){
+        $(".share").show();
+    })
+    $("input[type=checkbox]").click(function(){
+        if($("input[name=choiceThis]:checked").length>=4){
+            $(this).removeAttr("checked");
+            alert("最多选3个!")
+        }
+    })
+    function collegeLists(){
+        alert('选定后就不能更改了哦！');
+        var coid=$(".select_school").val();
+    }
+</script>
+</body>
+</html>
