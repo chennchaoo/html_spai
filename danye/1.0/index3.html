@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link href="css/style.css?t=8" type="text/css" rel="stylesheet" media="all" />
+        <script>
+        	(function(){
+			var phoneWidth = parseInt(window.screen.width),
+				phoneScale = phoneWidth/640,
+				ua = navigator.userAgent;
+			if (/Android (\d+\.\d+)/.test(ua)){
+				var version = parseFloat(RegExp.$1);
+				// andriod 2.3
+				if(version > 2.3){
+					document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+				// andriod 2.3以上
+				}else{
+					document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+				}
+				// 其他系统
+			} else {
+				/*document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');*/
+				document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+			}
+		})();
+		
+		 
+        </script>
+	</head>
+
+	<body>
+		<div class="bg_3">
+        	
+        	<a href="index4.html"></a>
+        </div>
+	</body>
+
+</html>
