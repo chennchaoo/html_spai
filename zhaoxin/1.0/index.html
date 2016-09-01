@@ -272,6 +272,10 @@
     })
     function collegeLists(){
         //alert('选定后就不能更改了哦！');
+        var resultType='<option value="0">类型选择</option>';
+        $(".shetuan_type").html(resultType);
+        var resultList='';
+        $(".shetuan_list").html(resultList);
         var coid=$(".select_school").find("option:selected").val();
 
         var school=$(".select_school").find("option:selected").text();
@@ -292,7 +296,7 @@
                 if(data.code==1){
                     if(typeid<=0){
                         if(data.data.type_lists.length>0){
-                            var resultType='<option value="0">类型选择</option>';
+                            resultType='<option value="0">类型选择</option>';
                             for(var iType=0; iType<data.data.type_lists.length;iType++){
                                 resultType+='<option value="'+data.data.type_lists[iType].typeid+'">'+data.data.type_lists[iType].typename+'</option>';
                             }
@@ -301,7 +305,7 @@
                     }
                     //alert(data.data.lists.length);
                     if(data.data.lists.length>0){
-                        var resultList='';
+                        resultList='';
                         for(var iList=0; iList<data.data.lists.length;iList++){
                             resultList+=
                                 '<div class="shetuan_list_1">'
