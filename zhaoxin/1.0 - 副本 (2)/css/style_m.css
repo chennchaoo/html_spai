@@ -108,10 +108,7 @@ select{border:0px;outline: medium none;}
 .xiangqing{ width:480px; overflow: hidden; padding-bottom: 20px;}
 .xiangqing_left{width:150px; height:200px; float:left;}
 .xiangqing_avatar{ width:125px; height:125px ; border-radius: 100px;
-    }
-.xiangqing_avatar img{
-    width:125px; height:125px ; border-radius: 100px;
-}
+    background: #000000;}
 .shezhang_name{text-align:center; font-size:25px; line-height:50px;}
 .xiangqing_word{ width:330px; font-size:20px; float:left; min-height: 160px;}
 .xiangqing_check{ float:right; color:#ffcc00; font-size:25px; }
@@ -206,10 +203,4 @@ select{border:0px;outline: medium none;}
     transform: rotate(-50deg);
     -o-transform: rotate(-50deg);
     -webkit-transform: rotate(-50deg);}
-.share2{ width:100px; height:100px;
-    position: fixed;
-    left:500px;
-    top:20px;
-    background: url(../img/share.png) no-repeat;
-}
 
