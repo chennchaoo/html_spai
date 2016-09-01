@@ -144,8 +144,8 @@ select{border:0px;outline: medium none;}
     font-size:29px; color:white;margin-left:5px;
 }
 #form_input textarea{
-    width:480px; height:70px; background:none;
-    border:1px solid white;outline: medium none;color: white;
+    width:490px; height:70px; background:none;
+    border:0px;outline: medium none;color: white;
     font-size:27px;
 }
 ::-webkit-input-placeholder { /* WebKit browsers */
