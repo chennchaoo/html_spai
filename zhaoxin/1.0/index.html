@@ -213,24 +213,25 @@
         var profile=$("#sub_profile").val();
         if(truename=='' || specialty=='' || phone=='' || weixin=='' || qq==''){
             alert('资料不全');
+        }else{
+            $.ajax({
+                type : "POST",
+                dataType : "json",
+                url : publicUrl+'a/?m=share&a=register',
+                data: 'cids='+cids+'&truename='+truename+'&specialty='+specialty+'&phone='+phone+'&weixin='+weixin+'&qq='+qq+'&profile='+profile,
+                success : function(data){
+                    if(data.code==1){
+                        alert('提交成功');
+                        $(".bg_2").hide();
+                        $(".bg_1").hide();
+                        $(".bg_3").show();
+                    }else{
+                        alert(data.msg);
+                    }
+                }
+            })
         }
 
-        $.ajax({
-            type : "POST",
-            dataType : "json",
-            url : publicUrl+'a/?m=share&a=register',
-            data: 'cids='+cids+'&truename='+truename+'&specialty='+specialty+'&phone='+phone+'&weixin='+weixin+'&qq='+qq+'&profile='+profile,
-            success : function(data){
-                if(data.code==1){
-                    alert('提交成功');
-                    $(".bg_2").hide();
-                    $(".bg_1").hide();
-                    $(".bg_3").show();
-                }else{
-                    alert(data.msg);
-                }
-            }
-        })
         /*$(".bg_2").hide();
         $(".bg_1").hide();
         $(".bg_3").show();*/
