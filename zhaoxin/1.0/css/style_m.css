@@ -114,8 +114,8 @@ select{border:0px;outline: medium none;}
 }
 .shezhang_name{text-align:center; font-size:25px; line-height:50px;}
 .xiangqing_word{ width:330px; font-size:20px; float:left; min-height: 160px;}
-.xiangqing_check{ float:right; color:#ffcc00; font-size:25px; }
-.xiangqing_check input{ width:22px; height:22px; border:#ffcc00 1px solid;}
+.xiangqing_check{ float:right; color:#ffcc00; font-size:30px; }
+.xiangqing_check input{ width:27px; height:27px; border:#ffcc00 1px solid;}
 .shetuan_checked{ width:528px; height:120px; margin:0 auto; margin-top:20px; overflow: hidden;}
 .shetuan_checked_left{ width:360px; height:120px; background:rgba(0,0,0,0.5); overflow: hidden; float: left;}
 .shetuan_checked_left_1{ font-size:25px;width:350px; margin-left:5px;height:40px; line-height: 40px; color:white; }

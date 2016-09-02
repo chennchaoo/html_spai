@@ -135,11 +135,11 @@
             <div class="shetuan_qingdan_1">3) 你所报名的社团</div>-->
         </div>
         <div class="form_user">
-            <div class="form_input"><label>姓名：</label><input type="text" id="sub_truename" placeholder="（必填）"></div>
-            <div class="form_input"><label>专业：</label><input type="text" id="sub_specialty"  placeholder="（必填）"></div>
-            <div class="form_input"><label>联系电话：</label><input type="tel" id="sub_phone" placeholder="（必填）"></div>
-            <div class="form_input"><label>微信：</label><input type="text"id="sub_weixin" placeholder="（选填）"></div>
-            <div class="form_input"><label>QQ：</label><input type="text" id="sub_qq" placeholder="（选填）"></div>
+            <div class="form_input"><label>姓名：</label><input type="text" id="sub_truename" placeholder=""></div>
+            <div class="form_input"><label>专业：</label><input type="text" id="sub_specialty"  placeholder=""></div>
+            <div class="form_input"><label>联系电话：</label><input type="tel" id="sub_phone" placeholder=""></div>
+            <div class="form_input"><label>微信：</label><input type="text"id="sub_weixin" placeholder=""></div>
+            <div class="form_input"><label>QQ：</label><input type="number" id="sub_qq" placeholder=""></div>
             <div class="form_input" id="form_input">
                 <label>自我介绍与特长（选填）</label></br>
                 <textarea id="sub_profile">
@@ -212,7 +212,7 @@
         var qq=$("#sub_qq").val();
         var profile=$("#sub_profile").val();
         var coid=$(".select_school").find("option:selected").val();
-        if(truename=='' || specialty=='' || phone==''){
+        if(truename=='' || specialty=='' || phone=='' || weixin=='' || qq==''){
             alert('资料不全');
         }else{
             $.ajax({
