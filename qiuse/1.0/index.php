@@ -49,8 +49,8 @@ if($tid == '02e1664fe83a17a8d4e77c902d0d8901'){
 <head>
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
     <title>S派-尝遍秋色</title>
-    <link href="css/style_h.css?t=8" type="text/css" rel="stylesheet" media="all" />
-    <link rel="stylesheet" href="css/mui.min.css?t=2">
+    <link href="css/style_h.css?t=2" type="text/css" rel="stylesheet" media="all" />
+    <!--<link rel="stylesheet" href="css/mui.min.css?t=2">-->
 	<script src="js/public.js"></script>
     <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script>
@@ -69,8 +69,8 @@ if($tid == '02e1664fe83a17a8d4e77c902d0d8901'){
 				}
 				// 其他系统
 			} else {
-				/*document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');*/
-				document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+				document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+				/*document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');*/
 			}
 		})();
 
@@ -78,15 +78,18 @@ if($tid == '02e1664fe83a17a8d4e77c902d0d8901'){
         </script>
 </head>
 <body>
-<div class="bg_1" style="display: block;">
-    <div class="bg_1_kong"></div>
-    <div class="jianying">
-        <div class="jianying_imgs"></div>
-    </div>
-    <div class="button_1" onclick="hiddenBg_1()"></div>
-</div>
+<!--<div class="bg_1" style="display: block;">
+
+</div>-->
 <div class="outer" style="display:block">
-    
+    <div class="bg_1">
+        <div class="bg_1_kong"></div>
+        <div class="jianying">
+            <div class="jianying_imgs"></div>
+        </div>
+        <!--<div class="button_1" onclick="hiddenBg_1()"></div>-->
+    </div>
+
     <div class="inner">
         <div class="lists">
             <div class="bg_kong"></div>
@@ -155,9 +158,10 @@ if($tid == '02e1664fe83a17a8d4e77c902d0d8901'){
 
 <script src="js/zepto.min.js"></script>
 <script src="js/dropload.min.js"></script>
+<!--
 <script src="js/mui.min.js"></script>
 <script src="js/mui.zoom.js"></script>
-<script src="js/mui.previewimage.js"></script>
+<script src="js/mui.previewimage.js"></script>-->
 <script>
 var p=1;
 var perpage=3;
@@ -338,6 +342,7 @@ function hiddenBg_1(){
     $(".outer").show();*/
 }
 function lookBig(member_id){
+    $(".blockFloor").hide();
     $("#"+member_id).show();
 }
 function CloseBig(member_id){

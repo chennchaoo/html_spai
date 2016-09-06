@@ -9,7 +9,9 @@ font-family: huaweikaiti;
 src: url(../font/huawenxingkai.ttf);
 }*/
 /*大的背景图*/
-.bg_1{width:640px;height:1029px; background:url(../img/bg_1.png) bottom no-repeat; margin:0 auto;}
+.bg_1{width:640px;height:1029px; background:url(../img/bg_1.png) bottom no-repeat; margin:0 auto;
+    z-index:-100;
+}
 /*介绍*/
 .bg_1_kong{ width:10px;height:5px;}
 .jianying{
@@ -42,11 +44,11 @@ src: url(../font/huawenxingkai.ttf);
 
 .blockFloor{ width:640px;  background: rgba(0,0,0,0.5);
     position: absolute;left:0;
-    top:50%;
-    /*z-index: 9999;*/
+    top:1029px;
+    z-index: 9999;
 }
 .closeBlock{ width:50px; height:50px;
-    margin-left:530px;
+    margin-left:528px;
     font-size:30px;
     color:#FFFFFF;
     border-radius: 50px;
@@ -54,12 +56,13 @@ src: url(../font/huawenxingkai.ttf);
     line-height: 50px;
     text-align: center;
 }
-.blueFloor{ width:600px; background: #0083cb;
+.blueFloor{ width:560px; background: #0083cb;
     margin:0 auto;
     padding-bottom:50px;
     padding-left:20px;
     padding-right:20px;
     margin-top:30px;
+    margin-bottom:30px;
     overflow: hidden;
     position:relative;
     left:0px;
@@ -181,7 +184,7 @@ src: url(../font/huawenxingkai.ttf);
 }
 
 .outer{
-    width: 100%;
+    width: 640px;
     min-height:1190px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -192,8 +195,8 @@ src: url(../font/huawenxingkai.ttf);
     box-orient:vertical;
     -webkit-flex-direction:column;
     flex-direction:column;
+
     background:#0083cb;
-    margin-top:-1px;
 }
 
 .inner{
