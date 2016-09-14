@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link type="text/css" rel="stylesheet" href="css/css.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.VMiddleImg.js"></script>
+    <script type="text/javascript" src="Plugins/jsrender/jsrender.min.js"></script>
+    <title>秀出橙橙的爱</title>
+    <script type="text/x-jsrender" id="trTemp">
+        <li>
+            <div class="Uimg-list" style="overflow:hidden;">
+                <h3 data-cid="{{:cid}}" onclick="Praise(this)"><img src="{{:img1}}" style="max-width:initial;" onload="MiddleImg(this)"/></h3>
+                <h4><img src="images/Ulist-hover.png" /></h4>
+            </div>
+            <h2>like：{{:votes}}</h2>
+        </li>
+    </script>
+    <script type="text/javascript">
+        var pageSize = 5;
+        var pageIndex = 1;
+        $(function () {
+            GetList(pageIndex);
+
+            //$(".Uimg-list h3").click(function () {
+            //    $(this).next("h4").show();
+            //    $(this).next("h4").delay(2000).fadeOut("3000");
+            //})
+            $("#li_more").click(function () {
+                pageIndex = pageIndex + 1;
+                GetList(pageIndex);
+            })
+        })
+
+        function GetList(pageIndex) {
+            $.get("http://api20.taskou.com/c/casio5/list.php", { pagesize: pageSize, page: pageIndex }, function (result) {
+                var jsonResult = JSON.parse(result);
+                if (jsonResult.code == 1) {
+                    var btn_more = $("#li_more");
+                    var html = $("#trTemp").render(jsonResult.data.lists);
+                    $(html).insertBefore(btn_more);
+                    if (jsonResult.data.totalpage > pageIndex) {
+                        btn_more.show();
+                    }
+                    else {
+                        btn_more.hide();
+                    }
+                }
+                else {
+                    alert(jsonResult.msg);
+                }
+            })
+        }
+
+        function Praise(obj) {
+            var $obj = $(obj);
+
+            $.post("http://api20.taskou.com/c/casio5/vote.php", { cid: $obj.data("cid") }, function (result) {
+                var jsonResult = JSON.parse(result);
+                if (jsonResult.code == 1) {
+                    var h2_like = $obj.parent().next("h2");
+                    if (h2_like) {
+                        $obj.next("h4").show();
+                        $obj.next("h4").delay(2000).fadeOut("3000");
+                        h2_like.empty().text("like：" + jsonResult.data.votes);
+                    }
+                }
+                else {
+                    alert(jsonResult.msg);
+                }
+            })
+        }
+
+        function MiddleImg(obj) {
+            $(obj).VMiddleImg();
+        }
+    </script>
+</head>
+
+<body>
+    <div class="viewport">
+        <div class="top">
+        	<table cellpadding="0" cellspacing="0"  class="top-table">
+            	<tr>
+                	<td width="50%" align="left">
+                    	<a style=" display:inline-block; width:50%;"><img src="images/casio-logo.png"/></a>
+                    </td>
+                    <td width="50%" align="right"><a style=" display:inline-block; width:80%;"><img src="images/tr.png"/></a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="Ulist-c">
+		<a class="Ulist-up-btn" href="upload.html">
+            	+
+            	</a>
+            <div class="Ulist-cc">
+                <ul>
+                    <li id="li_more" style="display:none;">
+                        <div class="Uimg-list">
+                            <h3><img src="images/more.png" /></h3>
+                            <!--<h4><img src="images/Ulist-hover.png" /></h4>-->
+                        </div>
+                        <!--<h2>like：205</h2>-->
+                    </li>
+                    <br class="clear" />
+                </ul>
+            </div>
+            <h4 class="ulist-code"><img src="images/code-img2.png" /></h4>
+            <h3 class="b-img"><img src="images/ex-img.png" /></h3>
+        </div>
+    </div>
+</body>
+</html>

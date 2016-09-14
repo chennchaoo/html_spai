@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>html5+css3实现上拉和下拉刷新</title>
+<link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js">
+</script>
+<script src="http://html5media.googlecode.com/svn/trunk/src/html5media.min.js"></script>
+<script type="text/javascript">
+
+var myScroll,
+	
+	pullUpEl, pullUpOffset,
+	generatedCount = 0;
+
+
+
+function pullUpAction () {
+	setTimeout(function () {	// <-- Simulate network congestion, remove setTimeout from production!
+		var el, li, i;
+		el = document.getElementById('thelist');
+		var fireyes=window.navigator.userAgent.toLowerCase().indexOf("firefox");
+		$.ajax({
+			type:"POST",
+			url: 'http://boss.taskou.com/api/index.php?type=islogin',
+			dataType: 'json',
+			success:function(data){
+				if(data.code==1){
+					//alert('123');
+				}else{
+					$.ajax({
+						type:"POST",
+						url: 'http://boss.taskou.com/a/?m=common&a=login',
+						dataType: 'json',
+						data:'phone=18721324132&password=123456&button=OK',
+						success:function(data){
+							if(data.code==1){
+								
+							}else{
+								alert('用户名与密码不符');	
+							}
+						}
+					});					
+				}
+			}
+		});
+		$.ajax({
+			type:"POST",
+			url: 'http://boss.taskou.com/a/?m=boss2&a=questions',
+			dataType: 'json',
+			data:'page='+(++generatedCount),
+			success:function(data){
+				
+				if(data.code==1){
+					//alert(generatedCount);
+					var total = data.data.total;
+					var m1 = '';
+					if(total>0){
+						if(fireyes!=-1){
+							for(i=0;i<data.data.lists.length;i++){
+								li = document.createElement('li');
+								li.innerHTML = data.data.lists[i].subject;
+								el.appendChild(li, el.childNodes[0]); 	
+							}
+						}else{
+							for(i=0;i<data.data.lists.length;i++){
+								li = document.createElement('li');
+								li.innerText = data.data.lists[i].subject;
+								el.appendChild(li, el.childNodes[0]); 		
+								
+							}	
+							
+						}
+						
+					}
+					
+				}
+				//$(".main_renwu").html(m1);
+					
+			}
+		})
+		/*for (i=0; i<3; i++) {
+			li = document.createElement('li');
+			//li.innerText = 'Generated row ' + (++generatedCount);
+			if(fireyes!=-1){
+				 //li.innerHTML = 'Generated row ' + (++generatedCount);
+				 li.innerHTML = 'Generated row ' + (++generatedCount); 
+			}
+			else{
+				li.innerText = 'Generated row ' + (++generatedCount);
+			}
+			el.appendChild(li, el.childNodes[0]);
+			
+		}*/
+		myScroll.refresh();		// Remember to refresh when contents are loaded (ie: on ajax completion)
+	}, 1000);	// <-- Simulate network congestion, remove setTimeout from production!
+}
+
+function loaded() {
+	pullDownEl = document.getElementById('pullDown');
+	pullDownOffset = pullDownEl.offsetHeight;
+	pullUpEl = document.getElementById('pullUp');	
+	pullUpOffset = pullUpEl.offsetHeight;
+	
+	myScroll = new iScroll('wrapper', {
+		useTransition: true,
+		topOffset: pullDownOffset,
+		onRefresh: function () {
+			if (pullUpEl.className.match('loading')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
+			}
+		},
+		onScrollMove: function () {
+			if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'flip';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
+				pullUpEl.className = '';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
+				this.maxScrollY = pullUpOffset;
+			}
+		},
+		onScrollEnd: function () {
+			if (pullUpEl.className.match('flip')) {
+				pullUpEl.className = 'loading';
+				pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';				
+				pullUpAction();	// Execute custom function (ajax call?)
+			}
+		}
+	});
+	
+	setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+</script>
+
+<style type="text/css" media="all">
+
+
+</style>
+</head>
+<body>
+
+<!--<div id="header"><a href="http://cubiq.org/iscroll">iScroll</a></div>-->
+<div id="wrapper">
+	<div id="scroller">
+		<div id="pullDown">
+			<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+		</div>
+
+		<ul id="thelist">
+			<li>
+            	<div class="datu">
+                	<div class="datu_1"><img src="img/cr_pao_img.png"></div>
+                </div>
+            </li>
+			
+			<li>
+            	<div class="datu">
+                	<div class="datu_1">
+ 
+                            <video src="http://www.zhangxinxu.com/study/media/cat.mp4" width="320" height="240" controls="controls" type="video/mp4">
+                            Your browser does not support the video tag.
+                            </video>
+                    </div>
+                </div>
+            </li>
+			<li>Pretty row 4</li>
+			<li>Pretty row 5</li>
+			<li>Pretty row 6</li>
+			<li>Pretty row 7</li>
+			<li>Pretty row 8</li>
+			<li>Pretty row 9</li>
+			<li>Pretty row 10</li>
+			<li>Pretty row 11</li>
+			<li>Pretty row 12</li>
+		</ul>
+		<div id="pullUp">
+			<span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...</span>
+		</div>
+	</div>
+</div>
+<!--<div id="footer"></div>-->
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+    <title>s派</title>
+    <link href="css/style_h.css?t=8" type="text/css" rel="stylesheet" media="all" />
+    <link rel="stylesheet" href="css/mui.min.css?t=2">
+	<script src="js/public.js"></script>
+<script>
+        	(function(){
+			var phoneWidth = parseInt(window.screen.width),
+				phoneScale = phoneWidth/640,
+				ua = navigator.userAgent;
+			if (/Android (\d+\.\d+)/.test(ua)){
+				var version = parseFloat(RegExp.$1);
+				// andriod 2.3
+				if(version > 2.3){
+					document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+				// andriod 2.3以上
+				}else{
+					document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+				}
+				// 其他系统
+			} else {
+				/*document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');*/
+				document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+			}
+		})();
+		
+		 $.ajax({
+			type : "GET",
+			//async : false,
+			dataType : "json",
+			url : publicUrl+'m/index.php?',
+			success : function(d){
+				
+			}
+		 })
+		 
+        </script>
+</head>
+<body>
+<div class="outer">
+    
+    <div class="inner">
+        <div class="lists">
+
+            <div class="voteList">
+                <div class="list_da">
+                    <div class="datu_photo">美颜照片</div>
+
+                    <div class="datu">
+                        <a href="details.php" >
+                            <div class="datu_1"><img src="img/cr_pao_img.png"></div>
+                            <div class="datu_2">打击的思考了房间的思考付款拉的屎</div>
+                        </a>
+                        <div class="datu_3">22</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="xstd">向上拖动加载更多</div>
+
+  </div>
+    
+</div>
+
+<script src="js/zepto.min.js"></script>
+<script src="js/dropload.min.js"></script>
+
+<script src="js/mui.min.js"></script>
+	<script src="js/mui.zoom.js"></script>
+	<script src="js/mui.previewimage.js"></script>
+<script>
+
+// dropload
+var dropload = $('.inner').dropload({
+    domUp : {
+        domClass   : 'dropload-up',
+        domRefresh : '<div class="dropload-refresh">↓下拉刷新</div>',
+        domUpdate  : '<div class="dropload-update">↑释放更新</div>',
+        domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+    },
+    domDown : {
+        domClass   : 'dropload-down',
+        domRefresh : '<div class="dropload-refresh">↑上拉加载更多</div>',
+        domUpdate  : '<div class="dropload-update">↓释放加载</div>',
+        domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+    },
+    loadDownFn : function(me){
+		var result = '';
+		for(var i = 0; i < 3; i++){
+			
+			result +=	'<div class="list_da">'
+                    +'<div class="datu_photo">美颜照片</div>'
+                    +'<div class="datu">'
+                    +'<a href="details.php" >'
+                    +'<div class="datu_1"><img src="img/cr_pao_img.png"></div>'
+                    +'<div class="datu_2">打击的思考了房间的思考付款拉的屎</div>'
+                    +'</a>'
+                    +'<div class="datu_3">22</div>'
+                    +'</div>'
+                    +'</div>';
+		}
+		setTimeout(function(){
+			$('.voteList').append(result);
+			/*$('.xstd').before(result);*/
+			me.resetload();
+		},1000);
+    }
+});
+datas();
+function datas(){
+    var result = '';
+    for(var i = 0; i < 3; i++){
+
+        result +=	'<div class="list_da">'
+                +'<div class="datu_photo">美颜照片</div>'
+                +'<div class="datu">'
+                +'<a href="details.php" >'
+                +'<div class="datu_1"><img src="img/cr_pao_img.png"></div>'
+                +'<div class="datu_2">打击的思考了房间的思考付款拉的屎</div>'
+                +'</a>'
+                +'<div class="datu_3">22</div>'
+                +'</div>'
+                +'</div>';
+    }
+    setTimeout(function(){
+        $('.voteList').append(result);
+        /*$('.xstd').before(result);*/
+        me.resetload();
+    },1000);
+}
+
+</script>
+<script>
+mui.previewImage();
+	function dianzan(){
+		alert('点赞成功');	
+	}
+    	/*$(document).ready(function() {
+			
+            $(".list_img").click(function(){
+				alert('123');	
+			})
+        });*/
+		/*alert($(".imgs_works_1 img").width());*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport"/>
+<meta name="apple-mobile-web-app-capable" content="yes">  
+<meta name="apple-mobile-web-app-status-bar-style" content="black">  
+<meta content="telephone=no,email=no" name="format-detection">
+<meta name="msapplication-tap-highlight" content="no">
+<link type="text/css" rel="stylesheet" href="css/css.css"/>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<title>秀出橙橙的爱</title>
+<script type="text/javascript">
+
+function ShowDiv(bg_div,show_div){	
+	if(bg_div!='')
+	{
+		$("#"+bg_div).show();
+		
+	}
+	$("#"+show_div).show();
+	
+	
+	
+};
+//关闭弹出层
+function CloseDiv(bg_div,show_div)
+{
+	if(bg_div != ''){
+		$("#"+bg_div).hide();
+	}
+	$("#"+show_div).hide();
+};
+</script>
+</head>
+
+<body>
+	<div class="viewport">
+    	<div class="top">
+        	<table cellpadding="0" cellspacing="0"  class="top-table">
+            	<tr>
+                	<td width="50%" align="left">
+                    	<a style=" display:inline-block; width:50%;"><img src="images/casio-logo.png"/></a>
+                    </td>
+                    <td width="50%" align="right"><a style=" display:inline-block; width:80%;"><img src="images/tr.png"/></a></td>
+                </tr>
+            </table>
+        </div>
+       <div class="index-c">
+       		<h2><img src="images/img3.jpg"/></h2>
+            <div class="index-btn-line">
+            	<a  class="btn activity-btn" style=" float:left;" onclick="ShowDiv('overlay-bg','tan_1')"><img src="images/activity-btn.jpg"/></a>
+                <a href="ulist.html" class="btn po-btn" style=" float:right; "><img src="images/po-btn.jpg"/></a>
+                <br class="clear"/>
+            </div>
+       </div>
+       <div class="index-code">
+       		<h3 style=" width:55%; padding-right:3rem; box-sizing:border-box;  background-size:auto 100%;">
+             <table cellpadding="0" cellspacing="0">
+             	<tr>
+                	<td width="60%"><img src="images/code-img.png"/></td>
+                    <td width="40%" valign="middle"><img src="images/img4.jpg"/></td>
+                </tr>
+             </table>
+             </h3>
+            <h3 class="b-img" style="width:35%"><img src="images/ex-img.png"/></h3>
+       </div>
+    </div>
+    <div id="overlay-bg" style="display: none;"></div>
+    <div class="tan_1" id="tan_1" style="display: none;" onclick="CloseDiv('overlay-bg','tan_1')">
+    	<div class="close_tan"></div>
+        <div class="rule-desc"> 
+        	<h2>卡西欧“秀出橙橙的爱”活动细则</h2>
+        	<p>1.本活动期间为2016年6月18日至2016年6月24日，面向上海大学生；</p>
+			<p>2.大学生在本活动期间内，可上传任何与橙色有关的照片，参与卡西欧“秀出橙橙的爱”活动；</p>
+            <p>3.任何人可登录活动页面，为上传的照片点赞加油；</p>
+            <p>4.获得点赞数量第一位的大学生，可获得卡西欧TR600相机一台；获得点赞数量第二三位的大学生，可分别获得卡西欧ZR55相机一台；</p>
+            <p>5.获得奖品的个人须自行缴纳个人所得税；</p>
+            <p>6.卡西欧（中国）贸易有限公司及上海羲岳网络科技有限公司、上海市时至广告有限公司有权在中国法律法规允许的范围内修改本活动条款及细则，并于《后生》手机平台或其他相关渠道公告后生效，敬请活动参与者留意。  </p>
+        </div>
+    </div>
+</body>
+</html>

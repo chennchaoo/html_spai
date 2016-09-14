@@ -1,0 +1,167 @@
+﻿html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big,
+cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl,
+dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, header {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    list-style: none;
+}
+@font-face {
+    font-family: 'DFPWaWaW5-GB5';
+    src:url('../fonts/DFPWaWaW5-GB5.TTF');
+	src:url('../fonts/DFPWaWaW5-GB5.TTF'),
+	url('../fonts/DFPWaWaW5-GB5.TTC')
+    font-weight: normal;
+    font-style: normal;
+}
+h1, h2, h3, h4 {
+    font-weight: 400;
+}
+html{
+    font-size:62.5%;
+	 font-family:"Microsoft Yahei","微软雅黑"; color:#626262;
+}
+body {
+    
+    -webkit-text-size-adjust: none;
+}
+
+img {
+    max-width: 100%;
+    width: auto\9;
+    height: auto;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a, button, input {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-tap-highlight-color: transparent; 
+}
+*:not(input,textarea) {
+    -webkit-touch-callout: inherit;
+    -webkit-user-select: auto;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+a {
+    text-decoration: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
+}
+:focus {
+    outline: 0;
+}
+input[type="button"]{-webkit-appearance:none;appearance:none;outline:none;-webkit-tap-highlight-color:rgba(0,0,0,0);border-radius:0;}
+a:focus,input:focus{ 
+    -webkit-tap-highlight-color:rgba(0,0,0,0); 
+    /*-webkit-user-modify:read-write-plaintext-only; */
+}
+.mt2{ margin-top:2rem;}
+.clear{ clear:both;}
+::-webkit-scrollbar-track { width:0.5rem;  height:0px;  background-color:rgba(226,100,134,.6); }
+::-webkit-scrollbar-track:hover{background-color:transparent;}
+.viewport{ width:100%; height:100%; }
+.top{ width:100%; height:auto;padding-top: 0.5rem;padding-bottom: 0.5rem; box-sizing:border-box; background-color:#ffffff;}
+table.top-table{ width:90%; margin-left:auto; margin-right:auto;}
+table.top-table tr td img{ width:90%;}
+.Ucontent{ width:100%; height:auto; position:relative; padding-top:16rem; background:#febea3 url(../images/img1.jpg) no-repeat top center; background-size:100% auto;}
+.Ulist-c{ width:100%; height:auto; padding-top:16rem; position:relative;  background:#febea3 url(../images/img2.jpg) no-repeat top center; background-size:100% auto; padding-bottom:3.5rem;}
+a.up-btn{ width:12rem; height:12rem;margin-left:auto; margin-right:auto; display:block; color:#FFF; text-align:center; line-height:12rem; font-family:Arial; font-size:12rem; background-color: #faaa8a; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%;}
+a.submit-btn{ width:5rem; height:5rem; position:absolute; right:1rem; top:22rem; display:block; background-color:#ff4a01; color:#feb89c; text-align:center; line-height:5rem; border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%; font-size:1.4rem;}
+.b-img{ position:absolute; bottom:2rem; right:0.6rem; width:25%; height:auto;}
+.Ulist-cc ul li{ width:50%; height:auto; float:left; display:inline; margin-top:1rem; margin-bottom:1rem;}
+.Ulist-cc ul li .Uimg-list{ width:12rem; height:12rem; position:relative; margin-left:auto; margin-right:auto;  border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%; }
+.Ulist-cc ul li a.ulist-more{width:12rem; height:12rem; display:block; margin-left:auto; margin-right:auto;  border-radius:50%; -webkit-border-radius:50%; -moz-border-radius:50%; -o-border-radius:50%; background:url(../images/more.png) no-repeat center center; background-size:100% 100%;}
+.Ulist-cc ul li h2{ color:#ff4900; font-family: 'DFPWaWaW5-GB5'; text-align:center; line-height:2.5rem; font-weight:bold;}
+.Uimg-list h3{ width:12rem; height:12rem;}
+.Uimg-list h4{ width:12rem; height:12rem; position:absolute; z-index:2; left:0px; top:0px; display:none;}
+.ulist-code{ width:25%; height:auto; margin-top:1rem; margin-left:2rem;}
+.index-c{ background-color:#febea3; width:100%; height:auto;}
+.index-c h2{ text-align:center;}
+.index-btn-line{ width:80%; margin-left:auto; margin-right:auto; padding-top:2rem; padding-bottom:4rem; height:2.5rem;}
+.index-code{ position:relative;}
+.index-btn-line a.btn{ display:block; font-size:1.4rem; text-align:center; width:45%; height:3rem; }
+#overlay-bg, .overlay-bg {
+    position: absolute;
+    left: center;
+    top: 0px;
+    background-color: #000;
+    opacity: 0.4;
+    width: 100%;
+    height: 100vh;
+}
+.tan_1 {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    background:rgba(255,255,255,.6);
+    width:24rem;
+    height:30rem; 
+    margin-left: -12rem;
+	margin-top:-15rem;
+    z-index: 0; border-radius:5px; -webkit-border-radius:5px;
+    text-align: center;
+    font-size:1.3rem; padding-top:3.2rem; padding-bottom:2rem; box-sizing:border-box;
+}
+  .close_tan {
+    width:2rem;
+    height:2rem;
+	position:absolute;  
+	top:1rem; 
+	right:1rem;
+	background-color:#e26486;
+	border-radius:50%; 
+	-webkit-border-radius:50%; 
+	-moz-border-radius:50%; 
+	-o-border-radius:50%;  background:url(../images/close_button.png) no-repeat center center; background-size:100% 100%;
+}
+.rule-desc{ width:90%;  overflow-y:scroll;  margin-left:auto; margin-right:auto; height:24.8rem;}
+.rule-desc h2 {
+    color: rgb(198, 44, 112);
+    font-family: 华文宋体; font-size:1.4rem;  font-weight: 700;
+}
+.rule-desc p{
+    font-size:1.2rem; line-height:1.6rem;
+    color: #c62c70; text-align:left;
+}
+@media (device-height:667px) and (-webkit-min-device-pixel-ratio:2){
+	
+	    .Ulist-c{padding-top:18rem; position:relative; }
+        .Ucontent{ padding-top:19rem;}
+	    a.submit-btn{ top:25rem;}
+	}
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+        .Ucontent{ padding-top:22rem;}
+		a.submit-btn{top: 26rem;}
+		
+	}
+a.Ulist-up-btn {
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    right:0.6rem;
+	top:10rem;
+    display: block;
+    color: #FFF;
+    text-align: center;
+    line-height:6rem;
+    font-family: Arial;
+    font-size: 6rem;
+    background-color: #faaa8a;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -o-border-radius: 50%;}

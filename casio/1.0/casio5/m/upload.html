@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link type="text/css" rel="stylesheet" href="css/css.css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.VMiddleImg.js"></script>
+    <script type="text/javascript" src="Plugins/JqueryForm/jquery.form.beta.js"></script>
+    <title>秀出橙橙的爱</title>
+    <script>
+        $(function () {
+            $("#btn_uploadPic,#pic_show").click(function () {
+                $("#input_pic").click();
+            });
+
+            $("#btn_submit").click(function () {
+                var picurl=$("#btn_uploadPic").data("picurl");
+                if(picurl==""){
+                    alert("请先上传图片");
+                    return false;
+                }
+
+                $.post("http://api20.taskou.com/c/casio5/add.php", { img1: picurl }, function (result) {
+                    var jsonResult = JSON.parse(result);
+                    if (jsonResult.code == 1) {
+                        window.location.href = "ulist.html";
+                    }
+                    else {
+                        alert(jsonResult.msg);
+                    }
+                });
+            });
+
+            $("#input_pic").change(function () {
+                var form = $("#form_upload");
+                var formData = form.getFormData();
+                var url = form.attr("action");
+
+                form.submitForm2({
+                    url: url,
+                    data:formData,
+                    success:function (result) {
+                        if (result.code == 1) {
+                            var img =$("#img_show") ;
+                            $("#btn_uploadPic").data("picurl", result.data.img_url);
+                            $("#btn_uploadPic").hide();
+
+                            img.attr("src", result.data.img_url);
+                            img.load(function () {
+                                img.VMiddleImg();
+                            });
+
+                            $("#pic_show").show();
+                        }
+                        else {
+                            alert(result.msg);
+                        }
+                    }
+                });
+            })
+        });
+    </script>
+</head>
+
+<body>
+    <div class="viewport">
+       <div class="top">
+        	<table cellpadding="0" cellspacing="0"  class="top-table">
+            	<tr>
+                	<td width="50%" align="left">
+                    	<a style=" display:inline-block; width:50%;"><img src="images/casio-logo.png"/></a>
+                    </td>
+                    <td width="50%" align="right"><a style=" display:inline-block; width:80%;"><img src="images/tr.png"/></a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="Ucontent">
+            <form id="form_upload" enctype="multipart/form-data" action="http://api20.taskou.com/a/?m=common&a=uploadFromImage" method="post">
+                <div class="up-line">
+                    <a class="up-btn" id="btn_uploadPic" data-picurl="">
+                        +
+                    </a>
+                    <a class="up-btn" id="pic_show" style="display:none;overflow: hidden;">
+                        <img id="img_show" style="max-width: initial;"/>
+                    </a>
+                    <a class="submit-btn" id="btn_submit">提交</a>
+                    <input type="file" id="input_pic" style="display:none;" name="pics"/>
+                </div>
+            </form>
+            <h2 style="text-align:center; width:80%; margin-left:auto; margin-right:auto; margin-top:0.5rem; margin-bottom:1rem;"><img src="images/t1.png" /></h2>
+            <h2 style="text-align:center; margin-left:auto; margin-right:auto; width:35%; padding-bottom:3rem;">
+                <img src="images/code-img2.jpg" />
+            </h2>
+            <h3 class="b-img"><img src="images/ex-img.png" /></h3>
+        </div>
+    </div>
+</body>
+</html>
