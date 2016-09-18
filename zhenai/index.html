@@ -40,12 +40,25 @@
         </script>
 </head>
 <body>
-<div class="outer">
-    
+<div class="bg_1" style="display: block">
+    <div class="bg_1_kong"></div>
+    <div class="banner"></div>
+    <div class="bg_2"></div>
+    <div class="button_big">
+        <div class="left_button"></div>
+        <div class="right_button"></div>
+    </div>
+    <div class="download_button">
+
+    </div>
+</div>
+<div class="outer" style="display: none;">
+
     <div class="inner">
         <div class="lists">
 
-            <div class="voteList">
+
+            <div class="voteList" style="display: block">
                 <div class="list_da">
                     <div class="datu_photo">美颜照片</div>
 
@@ -138,12 +151,16 @@ mui.previewImage();
 	function dianzan(){
 		alert('点赞成功');	
 	}
-    	/*$(document).ready(function() {
-			
-            $(".list_img").click(function(){
-				alert('123');	
-			})
-        });*/
+    $(document).ready(function() {
+
+        $(".right_button").click(function(){
+            $(".bg_1").hide();
+            $(".outer").show();
+        })
+        $(".download_button").click(function(){
+            location.href="http://a.app.qq.com/o/simple.jsp?pkgname=com.app.spire";
+        })
+    });
 		/*alert($(".imgs_works_1 img").width());*/
     </script>
 </body>

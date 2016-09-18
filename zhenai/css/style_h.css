@@ -9,7 +9,26 @@ font-family: huaweikaiti;
 src: url(../font/huawenxingkai.ttf);
 }*/
 /*大的背景图*/
+.bg_1{width:640px;height:1029px; background:#fedadb; margin:0 auto;
+}
+.bg_1_kong{ width:10px; height:40px;}
+.banner{ width:585px; height:194px; background: url(../img/banner.png) no-repeat; margin:0 auto;
 
+}
+.bg_2{ width:578px; height:533px; background: url(../img/bg_2.png) no-repeat;
+    margin:0 auto; margin-top:20px;
+}
+.button_big{ width:600px; height:77px; margin:0 auto;
+    overflow: hidden;margin-top:20px;}
+.left_button{ width:274px; height:77px; background: url(../img/left_button.png) no-repeat; float: left;
+    margin-left:10px;
+}
+.right_button{ width:274px; height:77px; background: url(../img/right_button.png) no-repeat; float: left;
+    margin-left:30px;
+}
+.download_button{
+    width:640px; height:105px; background: url(../img/download.png) no-repeat;margin-top:40px;
+}
 .datu{
     width:500px;min-height:480px; margin:0 auto;background:#FFF;border-radius:10px;
 }
@@ -60,9 +79,7 @@ body{
     font-size: 1.2em;
 }
 .outer{
-    position: absolute;
-    left: 0;
-    top: 0;
+
     width: 100%;
     height: 100%;
     display: -webkit-box;
