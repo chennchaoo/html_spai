@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
+    <title>S派</title>
+    <link href="css/style_m.css?t=8" type="text/css" rel="stylesheet" media="all" />
+	<script src="js/public.js"></script>
+    <style></style>
+<script>
+        	(function(){
+			var phoneWidth = parseInt(window.screen.width),
+				phoneScale = phoneWidth/640,
+				ua = navigator.userAgent;
+			if (/Android (\d+\.\d+)/.test(ua)){
+				var version = parseFloat(RegExp.$1);
+				// andriod 2.3
+				if(version > 2.3){
+					document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+				// andriod 2.3以上
+				}else{
+					document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+				}
+				// 其他系统
+			} else {
+				/*document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');*/
+				document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+			}
+		})();
+		
+		 /*$.ajax({
+			type : "GET",
+			//async : false,
+			dataType : "json",
+			url : publicUrl+'m/index.php?',
+			success : function(d){
+				
+			}
+		 })*/
+		 
+        </script>
+</head>
+<body>
+<div class="bg_1" style="display:block">
+    <div class="bg_1_kong"></div>
+    <div class="bg_1_wenzi">隔壁那个谁</div>
+    <div class="bg_1_dianji"></div>
+</div>
+<div class="bg_2" style="display:none">
+    <div class="bg_1_kong"></div>
+    <div class="bg_1_wenzi">隔壁那个谁</div>
+    <div class="bg_1_dianji"></div>
+</div>
+<div class="bg_3" style="display:none">
+    <div class="bg_1_kong"></div>
+    <div class="bg_3_1"></div>
+    <div class="bg_3_2"></div>
+</div>
+<div class="bg_4" style="display:none">
+    <div class="bg_1_kong"></div>
+    <div class="bg_3_1"></div>
+    <div class="bg_3_2"></div>
+</div>
+
+<div style="display:none;width:100%; height:100%;margin: 0 auto; background: black; position:absolute;" id="gameDiv">
+
+    <div style="text-align:center;margin:20px; margin-top:300px;">
+        <div class="explain">点击超过10次即可成为生存者</div>
+        <span id="timer" style="color:#fff;font-size:20px;">
+            10.00 秒
+        </span>
+    </div>
+    <button id="button" class="button red" style="margin-top: 40px;width: 160px;height:160px;border-radius:80px;font-size:18px;font-weight:bold;margin-left:240px;">
+        点我点我
+    </button>
+    <div style="margin:20px;text-align:center;">
+        <div id="result" style="color:#fff;font-size:30px;">0 次</div>
+        <div id="best" style="margin-top:20px;color:#fff;font-size:20px;"></div>
+    </div>
+
+</div>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    var initial = 200;
+    var count = initial;
+    var counter; //10 will  run it every 100th of a second
+    var state = 0;
+    var total = 0;
+
+    if (localStorage.max) {
+        /*$('#best').html( '最好成绩：' + localStorage.max + ' 次');*/
+    }
+
+    function timer() {
+        if (count <= 0) {
+            clearInterval(counter);
+            state = 0;
+            //showDiv(3);
+            if(total>10){
+                showDiv(4);
+            }else{
+                showDiv(3);
+            }
+            /*$('#result_panel').show();*/
+
+            if ( !localStorage.max || parseInt(localStorage.max) < total) {
+                localStorage.max = total;
+                /*$('#best').html( '最好成绩：' + localStorage.max + ' 次');*/
+            }
+
+            localStorage.max = parseInt(localStorage.max) > total ? localStorage.max: total;
+            return;
+        }
+        count--;
+        displayCount(count);
+    }
+
+    function displayCount(count) {
+        var res = count / 100;
+        document.getElementById("timer").innerHTML = res.toPrecision(count.toString().length) + " 秒";
+    }
+
+    $(document).on('touchmove', function(e) {
+        e.preventDefault();
+    })
+
+    $('#button').on('touchstart', function () {
+
+        if (!state) {
+            state = 1;
+            counter = setInterval(timer, 10);
+        }
+
+        this.classList.add('active');
+    });
+
+    $('#button').on('touchend', function () {
+        if (state) {
+            total++;
+            $('#result').html(total + ' 次');
+        }
+        this.classList.remove('active');
+    });
+
+    // $('#stop').on('click', function () {
+    //     clearInterval(counter);
+    // });
+
+    function reset() {
+        count = initial;
+        total = 0;
+        state = 0;
+        $('#result').html(total + ' 次');
+        $('#timer').html(10 + ' 秒');
+    }
+
+    $('#reset').on('touchend', function () {
+        reset();
+        $('#result_panel').hide();
+    });
+
+    $('#doShare').on('touchend', function () {
+        dp_share(total);
+        $('#result_panel').hide();
+        reset();
+    });
+    displayCount(initial);
+</script>
+<script>
+    $(document).ready(function(){
+        $(".bg_1_dianji").click(function(){
+            $(".bg_1").hide();
+            $(".bg_2").hide();
+            $(".bg_3").hide();
+            $(".bg_4").hide();
+            $("#gameDiv").show();
+        })
+
+        $(".bg_3_1").click(function(){
+            //location.href='';
+            alert('跳转到报名链接，暂时木有');
+        })
+        $(".bg_3_2").click(function(){
+            location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.app.spire';
+        })
+    })
+    function showDiv(e){
+        $(".bg_1").hide();
+        $(".bg_2").hide();
+        $(".bg_3").hide();
+        $(".bg_4").hide();
+        $("#gameDiv").hide();
+        $(".bg_"+e).show();
+    }
+</script>
+<script>
+    /*var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?ff652de7c3fcac2e33a7bdc5ea62d3e1";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();*/
+</script>
+</body>
+</html>

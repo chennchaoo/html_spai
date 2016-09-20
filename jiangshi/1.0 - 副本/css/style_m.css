@@ -1,0 +1,71 @@
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+dl,dt,dd,ul,li{margin: 0px; padding: 0px;}
+ul{list-style: none;}
+.hide{display: none;}
+.clear{ clear: both}
+
+@font-face
+{
+font-family: zaozigongfang;
+src: url(../font/MFBANHEI_NONCOMMERCIAL-REGULAR.OTF);
+}
+/*大的背景图*/
+.bg_1{width:640px; height:1029px; background:url(../img/bg_1.png)  no-repeat; margin:0 auto;}
+.bg_2{width:640px; height:1029px; background:url(../img/bg_2.png)  no-repeat; margin:0 auto;}
+.bg_3{width:640px; height:1029px; background:url(../img/bg_3.png)  no-repeat; margin:0 auto;}
+.bg_4{width:640px; height:1029px; background:url(../img/bg_4.png)  no-repeat; margin:0 auto;}
+/*bg_1*/
+.bg_1_kong{ width:100px; height:20px;}
+.bg_1_wenzi{ width:300px; height:70px;
+    margin-left:300px; font-size:48px;
+    overflow: hidden; color: #ffffff; font-weight: 400; font-family: zaozigongfang;
+    text-shadow:#000 0px 10px 10px;
+}
+.bg_1_dianji{
+    width:600px; height:100px; margin:0 auto; margin-top:820px;
+}
+
+.bg_3_1{ width:600px; height:300px; margin:0 auto;
+    margin-top:500px;
+}
+.bg_3_2{ width:600px; height:150px; margin:0 auto;
+    margin-top:10px;
+}
+
+.explain{
+    width:400px; heigth:50px; margin: 0 auto;
+    font-size:25px; color:#FFFFFF; text-align: center;margin-bottom:50px;
+}
+.button {
+    display: inline-block;
+    zoom: 1;
+    vertical-align: baseline;
+    margin: 0 2px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font: 14px/100% Arial, Helvetica, sans-serif;
+    padding: .5em 2em .55em;
+    text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    border-radius: .5em;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+/*点击*/
+.red {
+    color: #faddde;
+    border: solid 1px #980c10;
+    background: #d81b21;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#aa1317));
+    background: -moz-linear-gradient(top, #ed1c24, #aa1317);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+}
+
+.active {
+    background: #d81b01;
+}
