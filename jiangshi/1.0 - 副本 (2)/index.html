@@ -78,12 +78,6 @@
     </div>
 
 </div>
-<input type="hidden" class="total" value="1">
-<div class="shareTo" style="display: block;">
-    <div class="shareTo_kong"></div>
-    <div class="shareTo_word">点击右上角分享给朋友</br>
-        查看自己是否被感染</div>
-</div>
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript">
     var initial = 200;
@@ -101,7 +95,11 @@
             clearInterval(counter);
             state = 0;
             //showDiv(3);
-            $(".total").val(total);
+            if(total>10){
+                showDiv(4);
+            }else{
+                showDiv(3);
+            }
             /*$('#result_panel').show();*/
 
             if ( !localStorage.max || parseInt(localStorage.max) < total) {
@@ -184,9 +182,6 @@
         $(".bg_3_2").click(function(){
             location.href='http://a.app.qq.com/o/simple.jsp?pkgname=com.app.spire';
         })
-        $(".shareTo").click(function(){
-            $(".shareTo").hide();
-        })
     })
     function showDiv(e){
         $(".bg_1").hide();
@@ -195,15 +190,6 @@
         $(".bg_4").hide();
         $("#gameDiv").hide();
         $(".bg_"+e).show();
-    }
-    function isJiangshi(){
-        var total= $(".total").val();
-
-        if(total>10){
-            showDiv(4);
-        }else{
-            showDiv(3);
-        }
     }
 </script>
 <script>

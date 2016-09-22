@@ -70,13 +70,3 @@ src: url(../font/MFBANHEI_NONCOMMERCIAL-REGULAR.OTF);
 .active {
     background: #d81b01;
 }
-
-.shareTo{ width:640px; height:1029px; background: rgba(0,0,0,0.9);
-    position: absolute;
-    left:0px;
-    top:0px;
-    color:#FFFFFF;
-    text-align: center;
-    font-size:25pt;
-}
-.shareTo_kong{ width:10px; height:300px;}
