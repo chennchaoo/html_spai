@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="initial-scale=1, user-scalable=0, minimal-ui" charset="UTF-8">
     <title>S派</title>
-    <link href="css/style_m.css?t=3" type="text/css" rel="stylesheet" media="all" />
+    <link href="css/style_m.css?t=2" type="text/css" rel="stylesheet" media="all" />
 	<script src="js/public.js"></script>
     <style></style>
 <script>
@@ -36,6 +36,7 @@
 				
 			}
 		 })*/
+		 
         </script>
 </head>
 <body style="height:1029px;">
@@ -43,13 +44,11 @@
     <div class="bg_1_kong"></div>
     <div class="bg_1_wenzi">隔壁那个谁</div>
     <div class="bg_1_dianji"></div>
-    <div class="bottom_img"><a href="http://www.dixintong.com/extact/zhuanti/M2/1270.html"><img src="img/bottom_img.jpg" width="640px"></a></div>
 </div>
 <div class="bg_2" style="display:none; height:1029px; position: relative;">
     <div class="bg_1_kong"></div>
     <div class="bg_1_wenzi">隔壁那个谁</div>
     <div class="bg_1_dianji"></div>
-    <div class="bottom_img"><a href="http://www.dixintong.com/extact/zhuanti/M2/1270.html"><img src="img/bottom_img.jpg" width="640px"></a></div>
 </div>
 <div class="bg_3" style="display:none; height:1029px; position: relative;">
     <div class="bg_1_kong"></div>
@@ -80,7 +79,7 @@
 
 </div>
 <input type="hidden" class="total" value="1">
-<div class="shareTo" style="display: none;">
+<div class="shareTo" style="display: block;">
     <div class="shareTo_kong"></div>
     <div class="shareTo_word">点击右上角分享给朋友</br>
         查看自己是否被感染</div>
@@ -102,10 +101,9 @@
             clearInterval(counter);
             state = 0;
             //showDiv(3);
-            //$(".total").val(total);
+            $(".total").val(total);
             /*$('#result_panel').show();*/
-			$(".total").val(total);
-            $(".shareTo").show();
+
             if ( !localStorage.max || parseInt(localStorage.max) < total) {
                 localStorage.max = total;
                 /*$('#best').html( '最好成绩：' + localStorage.max + ' 次');*/

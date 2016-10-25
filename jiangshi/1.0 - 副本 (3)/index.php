@@ -128,13 +128,11 @@ $TK['share'] = array('img'=>APP_PATH.'attachments/logo.png','title'=>'僵尸分�
     <div class="bg_1_kong"></div>
     <div class="bg_1_wenzi"><?php echo $log['nickname'];?></div>
     <div class="bg_1_dianji"></div>
-    <div class="bottom_img"><a href="http://www.dixintong.com/extact/zhuanti/M2/1270.html"><img src="img/bottom_img.jpg" width="640px"></a></div>
 </div>
 <div class="bg_2" style="display:none; height:1029px; position: relative;">
     <div class="bg_1_kong"></div>
     <div class="bg_1_wenzi"><?php echo $log['nickname'];?></div>
     <div class="bg_1_dianji"></div>
-    <div class="bottom_img"><a href="http://www.dixintong.com/extact/zhuanti/M2/1270.html"><img src="img/bottom_img.jpg" width="640px"></a></div>
 </div>
 <div class="bg_3" style="display:none; height:1029px; position: relative;">
     <div class="bg_1_kong"></div>

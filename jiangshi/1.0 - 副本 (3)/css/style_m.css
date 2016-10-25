@@ -22,7 +22,7 @@ src: url(../font/MFBANHEI_NONCOMMERCIAL-REGULAR.OTF);
     text-shadow:#000 0px 10px 10px;
 }
 .bg_1_dianji{
-    width:600px; height:180px; margin:0 auto; margin-top:820px;
+    width:600px; height:100px; margin:0 auto; margin-top:820px;
 }
 
 .bg_3_1{ width:600px; height:300px; margin:0 auto;
@@ -80,11 +80,3 @@ src: url(../font/MFBANHEI_NONCOMMERCIAL-REGULAR.OTF);
     font-size:25pt;
 }
 .shareTo_kong{ width:10px; height:300px;}
-
-.bottom_img{
-    width:640px;
-    height:88px;
-    position: fixed;
-    left: 0px;
-    bottom: 0px;
-}

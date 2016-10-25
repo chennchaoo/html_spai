@@ -140,9 +140,6 @@
             <div class="form_input"><label>联系电话：</label><input type="tel" id="sub_phone" placeholder="（必填）"></div>
             <div class="form_input"><label>微信：</label><input type="text"id="sub_weixin" placeholder="（选填）"></div>
             <div class="form_input"><label>QQ：</label><input type="text" id="sub_qq" placeholder="（选填）"></div>
-            <div class="form_input"><label>学号：</label><input type="text" id="sub_number" placeholder="（必填）"></div>
-            <div class="form_input"><label>班级：</label><input type="text" id="sub_class"  placeholder="（必填）"></div>
-            <div class="form_input"><label>邮箱：</label><input type="email" id="sub_email" placeholder="（必填）"></div>
             <div class="form_input" id="form_input">
                 <label>自我介绍与特长（选填）</label></br>
                 <textarea id="sub_profile">
@@ -213,21 +210,16 @@
         var phone=$("#sub_phone").val();
         var weixin=$("#sub_weixin").val();
         var qq=$("#sub_qq").val();
-
-        var student_id=$("#sub_number").val();
-        var gclass=$("#sub_class").val();
-        var email=$("#sub_email").val();
-
         var profile=$("#sub_profile").val();
         var coid=$(".select_school").find("option:selected").val();
-        if(truename=='' || specialty=='' || phone=='' || student_id=='' || gclass=='' || email=='' ){
+        if(truename=='' || specialty=='' || phone==''){
             alert('资料不全');
         }else{
             $.ajax({
                 type : "POST",
                 dataType : "json",
                 url : publicUrl+'a/?m=share&a=register',
-                data: 'cids='+cids+'&truename='+truename+'&specialty='+specialty+'&phone='+phone+'&weixin='+weixin+'&qq='+qq+'&profile='+profile+'&coid='+coid+'&student_id='+student_id+'&gclass='+gclass+'&email='+email,
+                data: 'cids='+cids+'&truename='+truename+'&specialty='+specialty+'&phone='+phone+'&weixin='+weixin+'&qq='+qq+'&profile='+profile+'&coid='+coid,
                 success : function(data){
                     if(data.code==1){
                         alert('提交成功');

@@ -126,7 +126,7 @@ select{border:0px;outline: medium none;}
 /* pageTwo*/
 .bg_2{ color:white;}
 .bg_2_kong{ width:10px; height:40px;}
-.bg_2_first_word{ width:530px; height:180px; color:white; font-size:33px; margin:0 auto; line-height:50px; text-align: center;}
+.bg_2_first_word{ width:530px; height:240px; color:white; font-size:42px; margin:0 auto; line-height:50px; text-align: center;}
 .shetuan_qingdan_word{ width:510px; height:100px;margin:0 auto;
     background: rgba(0,0,0,0.5); font-size:30px; line-height: 100px;padding-left:20px;
 }
@@ -134,12 +134,12 @@ select{border:0px;outline: medium none;}
     background: rgba(0,0,0,0.1); margin:0 auto;
 }
 .shetuan_qingdan_1{ width:500px;height:58px; margin:0 auto; line-height:58px; font-size:27px;}
-.form_user{ width:530px; height:680px; margin:0 auto;
+.form_user{ width:530px; height:488px; margin:0 auto;
     background:rgba(146,122,89,0.5);
 }
-.form_input,#form_input{ width:500px; height:65px; margin:0 auto; border-bottom: 1px solid white;font-size:29px;}
+.form_input,#form_input{ width:500px; height:70px; margin:0 auto; border-bottom: 1px solid white;font-size:29px;}
 #form_input{ height:110px;padding-top:10px;}
-.form_user input{ width:320px; height:63px;
+.form_user input{ width:320px; height:68px;
     background: none;border:0px;
     font-size:29px; color:white;margin-left:5px;
 }
